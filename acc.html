@@ -8,29 +8,28 @@
 </head>
 <body>
     
-    <!-- header  -->
     <header>
-        <!-- menu responsive -->
         
         <div class="menu_toggle">
             <span></span>
         </div>
 
         <div class="logo">
-            <a href="#home"><p><span>Sport's</span>Where</p></a>
+            <a href="acc.html"><p><span>Sport's</span>Where</p></a>
         </div>
         <ul class="menu">
-            <li><a href="#home">Accueil</a></li>
+            <li><a href="acc.html">Accueil</a></li>
             <li><a href="#cars">Chercher</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="login_btn">LOGIN</button>
     </header>
-    <!-- section Acceuil -->
+
      
     <section class="home">
         <div class="home-texte">
             <h1>WELCOME TO OUR WEBSITE</h1>
+            <a href="#chercher">Trouver un sport</a>
         </div>
     </section>
 
@@ -56,5 +55,19 @@
         </div>
 
     </section>
+
+    <script>
+
+        var menu_toggle = document.querySelector('.menu_toggle');
+        var menu = document.querySelector('.menu');
+        var menu_toggle_span = document.querySelector('.menu_toggle span');
+
+        menu_toggle.onclick = function(){
+            menu_toggle.classList.toggle('active');
+            menu_toggle_span.classList.toggle('active');
+            menu.classList.toggle('responsive') ;
+        }
+
+    </script>
 </body>
 </html>
