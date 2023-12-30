@@ -13,5 +13,5 @@ Avec une base de données de plus de 300 000 complexes sportifs qui englobe tout
     - Localisation actuelle à coté de adresse
     - Point depart et arrivée avec infos
     - Bouton voiture, velo, à pied
-    - Avoir un bouton suivant/suivant pour nous montrer une autre salle (la deuxieme plus loin, la troisième, ...)
+    - Avoir un bouton suivant pour nous montrer une autre salle (la deuxieme plus loin, la troisième, ...)
     - Finaliser site web
