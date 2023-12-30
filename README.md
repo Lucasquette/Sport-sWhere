@@ -14,4 +14,4 @@ Avec une base de données de plus de 300 000 complexes sportifs qui englobe tout
     - Point depart et arrivée avec infos
     - Bouton voiture, velo, à pied
     - Avoir un bouton suivant pour nous montrer une autre salle (la deuxieme plus loin, la troisième, ...)
-    - Finaliser site web
+    - Finaliser site web, mettre tout en un
