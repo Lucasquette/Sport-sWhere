@@ -1,5 +1,4 @@
-#PROJET PWEBC: SportsWhere
-
+# PROJET PWEBC: SportsWhere
 _Une carte interactive avec géolocalisation_
 
 **Objectif**
