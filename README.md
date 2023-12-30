@@ -14,8 +14,8 @@ Groupe 203/204 : NURMINEN Lucas, Rakotoarivelo Teddy, BALASSOUPRAMANIEN Madavan
 
 
 
-                                                                                                          _Reste à faire:
-                                                                                                            - Localisation actuel à coté de adresse
-                                                                                                            - Point depart et arrivée avec infos
-                                                                                                            - Bouton voiture, velo, à pied
-                                                                                                            - Finaliser site web_
+    Reste à faire:
+    - Localisation actuel à coté de adresse
+    - Point depart et arrivée avec infos
+    - Bouton voiture, velo, à pied
+    - Finaliser site web
