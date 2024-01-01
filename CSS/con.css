@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Ubuntu&display=swap');
+
+*{
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka One', cursive;
+    box-sizing: border-box;
+    transition: all.2s linear;
+    text-decoration: none;
+    border: none;
+}
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 7em;
+    scroll-behavior: smooth;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8%;
+    height: 11%;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+
+header {
+    z-index: 4;
+}
+
+header .logo {
+    font-size: 27px;
+    font-weight: bold;
+    
+}
+
+header .logo p{
+    color: #174b7f;
+}
+
+header .logo span {
+    color: #000;
+}
+.menu {
+    display: flex;
+}
+.menu li {
+    list-style: none;
+    margin: 0 30px;
+}
+.menu li a {
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.menu li a:hover {
+    color: #ea1f33;
+}
+header button {
+    background-color: #174b7f;
+    cursor: pointer;
+    color: #fff;
+    padding: 5px 25px;
+}
+
+.home {
+    position: relative;
+    height: 120vh;
+    width: 100%;
+    background-image: url(../Images/back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    /*margin-top: 5%;*/
+}
+
+
+@keyframes slide-in {
+    to{
+        filter: blur(0);
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
+/*FORMULAIRE*/
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%; 
+}
+
+.contact {
+    width: 40%;
+    height: 70vh;
+    margin-top: 2%;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgb(3, 3, 3);
+    background-color: #0c140f;
+    border:5px solid black;
+}
+
+.A {
+    background-color: #0e2c4a; 
+    position: absolute;
+    margin-bottom: 5%;
+    margin-left: 40%;
+    margin-right: 0; 
+    z-index: 1;
+}
+
+.contact-form{
+    margin:auto;
+    padding:0 10px;
+    overflow: hidden;
+}
+
+.A h1{
+    font-weight: 500;
+    font-size:2.5em;
+    margin-top: 3%;
+    text-align: center;
+    text-shadow: 10px 3px 4px rgba(0, 2, 1, 0.5);
+    font-weight: bold;
+    color:white;
+}
+
+
+.contact-form{
+    margin:auto;
+    padding:0 10px;
+    overflow: hidden;
+}
+
+.contact-form-text{
+    display:block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    margin: 4% 0;
+    transition: 0.5s;
+    background-color: #0b2743;
+    color:#5b5a5a;
+    padding: 3%;
+}
+
+.contact-form-text:hover{
+    box-shadow: 0 0 10px 5px #051729;
+}
+
+textarea.contact-form-text{
+    resize:none;
+}
+
+.contact-form-btn{
+    margin-left:65%;
+    margin-bottom:3%;
+    padding: 2%;
+    border-radius: 8px;
+    width: 30%;
+    border:5px solid rgb(14, 13, 13);
+}
+
+.contact-form-btn:hover{
+    background-color: #204228;
+    transition: 0.5s;
+    color:white;
+}
+
+
+
+
+/**** CONTACTE****/
+.info {
+    background-color: rgba(253, 252, 252, 0.76)/*rgba(255, 255, 255, 0.4)*/;
+    border:5px solid black;
+    position: relative;
+    margin-right: 30%;
+    z-index: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.info:hover{
+    z-index: 1;
+    background-color:  #0e2c4a;
+}
+
+
+
+.info h3{
+    font-weight: 500;
+    font-size:2.5em;
+    margin-top:3%;
+    margin-left: 10%;
+    text-shadow: 10px 3px 4px rgba(0, 2, 1, 0.5);
+}
+
+.info .infoBox div{
+    display: flex;
+    align-items: center;
+}
+
+.infoBox{
+    margin-bottom:3%;
+}
+
+.info .infoBox div span{
+    min-width: 60px;
+    height: 60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+.info img{
+    height: 40%;
+    width: 40%;
+}
+
+.carte iframe{
+    width: 20em;
+    height: 13em;
+    margin-left: 4%;
+}
+
+
+/****FOOTER****/
+
+footer {
+    top: 20%;
+    background-color: #ea1f33;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 14px;
+}
+.menu_toggle {
+    display: none;
+}
+
+
+.footer {
+    padding: 3%;
+    background-color: rgb(20, 19, 19);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 2rem;
+}
+
+.footer-box{
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color:white;
+}
+
+.footer-box a{
+    color: #979797;
+    margin-bottom: 0.8rem;
+    transition: all .50s ease;
+}
+
+.footer-box a:hover{
+    transform: translateX(-4px);
+    color: var(--text-color);
+}
+
+.social a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    background: #202020;
+    color: var(--text-color);
+    font-size: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: transform 0.6s;
+}
+
+.social a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: translateX(-4px);
+}
+
+
+@media (max-width:682px) {
+    header {
+        padding: 0 10px;
+    }
+    header .menu {
+        display: none;
+    }
+    .home {
+        padding:  0 10px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header .menu.responsive {
+        margin-top: 3%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: 2;
+        background-color: #ffffff;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu_toggle {
+        height: 50px;
+        width: 50px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .menu_toggle span {
+       width: 35px;
+       background-color: #174b7f;
+       height: 5px;
+       border-radius: 6px;
+       transition: 0.5s;
+    }
+    .menu_toggle span.active {
+        width: 0px;
+    }
+    .menu_toggle::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 5px;
+        background-color: #174b7f;
+        transform:translateY(10px);
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .menu_toggle.active::before {
+        width: 28px;
+        transform: rotate(45deg);
+    }
+    .menu_toggle::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 5px;
+        background-color: #174b7f;
+        transform:translateY(-10px);
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .menu_toggle.active::after {
+        width: 28px;
+        transform: rotate(-45deg);
+    }
+
+}
+
+@media (max-width: 1110px){
+    .carte iframe {
+        margin: 2%;
+    }
+}
+
+@media (max-width: 1080px){
+    .carte iframe {
+        width: 100%; 
+        height: 100%; 
+        margin-right: 2%;
+    }
+}
+@media (max-width: 900px){
+
+    .home{
+        flex-direction: column;
+        margin-top: 20%;
+        align-items: center;
+    }
+
+    .contact{
+        width: 60%;
+    }
+
+    .A{
+        position: relative;
+        margin: auto;
+        margin-bottom: 2%;
+        height: auto;
+    }
+    .info {
+        margin: auto;
+    }
+
+    h3{
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+    .hor{
+        text-align: center;
+        margin: auto;
+    }
+    .hor p{
+        margin-top: 3%;
+    }
+
+}
+
+
+@media (max-width: 600px){
+	:root{
+		--h1-font: 3.5rem;
+	  --h2-font: 2.1rem;
+	}
+}
+
+@media (max-width: 500px){
+    iframe{
+        width:50%;
+        height: 40%;
+    }
+}
