@@ -62,10 +62,14 @@ header .logo span {
     font-weight: bold;
     transition: 0.2s;
 }
+
+/*
 .menu li a:hover {
-    color: #ea1f33;
+    color: green;
 }
-header button {
+*/
+
+header .login_btn {
     background-color: #174b7f;
     cursor: pointer;
     color: #fff;
@@ -76,7 +80,7 @@ header button {
     position: relative;
     height: 120vh;
     width: 100%;
-    background-image: url(../Images/back2.png);
+    background-image: url(../Images/back.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -139,7 +143,6 @@ header button {
 
 footer {
     top: 20%;
-    background-color: #ea1f33;
     text-align: center;
     padding: 10px 0;
     color: #fff;
