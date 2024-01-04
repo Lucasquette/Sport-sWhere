@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport's Where</title>
+    <link rel="stylesheet" href="CSS/creation.css">
+</head>
+<body>
+    
+    <header>
+        <div class="menu_toggle">
+            <span></span>
+        </div>
+
+        <div class="logo">
+            <a href="acc.html"><p><span>Sport's</span>Where</p></a>
+        </div>
+        <ul class="menu">
+            <li><a href="acc.html">Accueil</a></li>
+            <li><a href="#chercher">Chercher</a></li>
+            <li><a href="con.html">Contact</a></li>
+        </ul>
+        <a href="connexion.html" class="login_btn">LOGIN</a>
+    </header>
+
+     
+    <section class="home">
+      <div class="formulaire">
+        <form method="GET" action="01_target.php">
+          <h1>Créer un compte</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Adresse e-mail" required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Nom d'utilisateur" required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Mot de passe" required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Adresse postale " required>
+          </div>
+          <button type="submit" class="btn">Créer mon compte</button>
+          <div class="aveccompte">
+            <p>Vous possédez un compte ? <a href="connexion.html">Se connecter</a></p>
+          </div>
+        </form>
+      </div>    
+    </section>
+
+
+
+    <section class="footer">
+        <div class="footer-box">
+            <h3>Services</h3>
+            <a href="#">Recrutement</a>
+            <a href="#">Marchés publics</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Informations générales</h3>
+            <a href="#">Siège</a>
+            <a href="#">Plan du site</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Informations légales</h3>
+            <a href="#">Mentions légales</a>
+            <a href="#">Gestions des cookies</a>
+        </div>
+
+    </section>
+
+    <script>
+
+        var menu_toggle = document.querySelector('.menu_toggle');
+        var menu = document.querySelector('.menu');
+        var menu_toggle_span = document.querySelector('.menu_toggle span');
+
+        menu_toggle.onclick = function(){
+            menu_toggle.classList.toggle('active');
+            menu_toggle_span.classList.toggle('active');
+            menu.classList.toggle('responsive') ;
+        }
+
+    </script>
+</body>
+</html>
