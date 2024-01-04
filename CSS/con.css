@@ -62,10 +62,14 @@ header .logo span {
     font-weight: bold;
     transition: 0.2s;
 }
+
+/*
 .menu li a:hover {
-    color: #ea1f33;
+    color: green;
 }
-header button {
+*/
+
+header .login_btn {
     background-color: #174b7f;
     cursor: pointer;
     color: #fff;
@@ -176,7 +180,7 @@ textarea.contact-form-text{
 }
 
 .contact-form-btn:hover{
-    background-color: #204228;
+    background-color:#174b7f;
     transition: 0.5s;
     color:white;
 }
@@ -249,7 +253,6 @@ textarea.contact-form-text{
 
 footer {
     top: 20%;
-    background-color: #ea1f33;
     text-align: center;
     padding: 10px 0;
     color: #fff;
