@@ -22,7 +22,7 @@
             <li><a href="#cars">Chercher</a></li>
             <li><a href="con.html">Contact</a></li>
         </ul>
-        <button class="login_btn">LOGIN</button>
+        <a href="connexion.html" class="login_btn">LOGIN</a>
     </header>
 
     <section class="home">
@@ -31,7 +31,7 @@
             <form class="contact-form" action="contact.html" method="post">
                 <input type="text" class="contact-form-text" placeholder="Nom" required>
                 <input type="text" class="contact-form-text" placeholder="Prenom" required>
-                <input type="text" class="contact-form-text" placeholder="Email" required>
+                <input type="text" class="contact-form-text" placeholder="Adresse e-mail" required>
                 <textarea class="contact-form-text" placeholder="Votre message" required></textarea>
                 <input type="submit" class="contact-form-btn" value="Envoyer" id="button">
             </form>
@@ -78,35 +78,33 @@
     </section>
 
     <script>
-
-        // When the document is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Get the elements
-            var info = document.querySelector('.contact.info'); // Select the .info element
-            var elementA = document.querySelector('.contact.A'); // Select the .A element
-            /*var elementB = document.getElementsByTagName('text');*/
+            var info = document.querySelector('.contact.info'); 
+            var elementA = document.querySelector('.contact.A'); 
+            var elementB = document.getElementsByClassName('input');
+            var inputsTexte = document.querySelectorAll('.contact-form-text');
 
-            // When you hover over .info
             info.addEventListener('mouseover', function() {
-                // Move .A down
-                elementA.style.transform = 'translateY(50px)';
+                elementA.style.transform = 'translateY(40px)';
+                info.style.transform='translateY(-60px)';
                 elementA.style.transition = 'transform 0.3s ease';
                 elementA.style.backgroundColor = 'rgba(253, 252, 252, 0.76)';
-                elementB.style.backgroundColor = 'rgba(253, 252, 252, 0.76)';
-                // Move .info up
+                inputsTexte.forEach(function(input) {
+                    input.style.background = 'white';
+                });
+
                 info.style.transform = 'translateY(-20px)';
                 info.style.transition = 'transform 0.3s ease';
             });
 
-            // When you stop hovering over .info
             info.addEventListener('mouseout', function() {
-                // Move .A back to its original place
                 elementA.style.transform = 'translateY(0)';
                 elementA.style.backgroundColor = '#0e2c4a';
        
-
-                // Move .info back to its original place
                 info.style.transform = 'translateY(0)';
+                inputsTexte.forEach(function(input) {
+                    input.style.background = ' #0b2743';
+                });
             });
         });
 
@@ -123,4 +121,4 @@
 
     </script>
 </body>
-</html>
+</html> 
