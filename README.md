@@ -11,5 +11,4 @@ Avec une base de données de plus de 300 000 complexes sportifs qui englobe tout
 
     Reste à faire:
     - Localisation actuelle à coté de adresse
-    - Point depart et arrivée avec infos
     - Finaliser site web, mettre tout en un
