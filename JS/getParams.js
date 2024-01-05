@@ -7,7 +7,9 @@ $(document).ready(function() {
 
     var transportMode = 'driving'; // Mode de transport par défaut
     var currentMarkers = [];
-    var nbRecherchePlusLoin = 1;
+    var currentIndex = 0; // Index de l'emplacement sportif actuel
+    var sportLocations = [];
+
 
     $('.btnTransport').click(function() {
         $('.btnTransport').removeClass('active');
@@ -46,6 +48,7 @@ $(document).ready(function() {
             success: function(geocodingData) {
                 if (geocodingData.features && geocodingData.features.length > 0) {
                     var startLocation = geocodingData.features[0].center; // [longitude, latitude]
+                    
                     $('#btn-plusloin').show();
                     // Centrer la carte sur le point de départ et ajuster le zoom
                     map.flyTo({
@@ -67,11 +70,34 @@ $(document).ready(function() {
         });
 
 
-
-        $('#btn-plusloin').click(function(){
-            findClosestSportLocation
-        })
+        
+    
     });
+    $('#btn-plusloin').click(function() {
+        var mapboxAccessToken = 'pk.eyJ1IjoibHVjYXNxdWV0dGVzIiwiYSI6ImNscTd5dDRjNjFjY2cyamt6cTF5OWswc2EifQ.fGb8-XeCWUNgclOcz7HXHQ';
+        currentIndex++;
+    
+        var startMarker = currentMarkers.find(marker => marker.getElement().classList.contains('markerDepart'));
+        if (!startMarker) {
+            console.error('Marqueur de départ introuvable.');
+            return;
+        }
+    
+        var startLocation = startMarker.getLngLat();
+        removeCurrentMarkers();
+        
+        var infraPlusLoin = getNthClosestLocation([startLocation.lng, startLocation.lat], sportLocations, currentIndex);
+        if (!infraPlusLoin) {
+            console.error('Aucune infrastructure trouvée pour l\'index spécifié.');
+            return;
+        }
+    
+        var endLocation = parseCoords(infraPlusLoin.col94);
+        addMarkerDepart(startLocation, '#13B2E2', 'Départ');
+        addMarkerArriver(endLocation, infraPlusLoin.col2, infraPlusLoin.col96); // Ajout du marqueur d'arrivée
+        getDirections([startLocation.lng, startLocation.lat], endLocation, mapboxAccessToken);
+    });
+    
 
 
     function findClosestSportLocation(adresseCoords, sport, accessToken) {
@@ -80,7 +106,8 @@ $(document).ready(function() {
             type: 'POST',
             data: { sport: sport },
             dataType: 'json',
-            success: function(sportLocations) {
+            success: function(data) {
+                sportLocations = data; // Stockez les données pour une utilisation ultérieure
                 var closestLocation = getClosestLocation(adresseCoords, sportLocations);
                 if (closestLocation) {
                     console.log('Le lieu de sport le plus proche est:', closestLocation);
@@ -95,6 +122,7 @@ $(document).ready(function() {
             }
         });
     }
+
 
     function getDirections(startCoords, endCoords, accessToken) {
         
@@ -184,6 +212,29 @@ $(document).ready(function() {
         return closest;
     }
 
+    function getNthClosestLocation(adresseCoords, locations, n) {
+        // Vérifier si n est valide
+        if (n <= 0 || n > locations.length) {
+            console.error("Valeur de 'n' invalide ou hors de portée.");
+            return null;
+        }
+    
+        var locationsWithDistance = locations.map(function(location) {
+            var locationCoords = parseCoords(location.col94);
+            var distance = turf.distance(adresseCoords, locationCoords, {units: 'kilometers'});
+            return { location: location, distance: distance };
+        });
+    
+        // Trier les emplacements par distance croissante
+        locationsWithDistance.sort(function(a, b) {
+            return a.distance - b.distance;
+        });
+    
+        // Retourner le n-ième emplacement le plus proche
+        return locationsWithDistance[n - 1].location;
+    }
+    
+
     function parseCoords(coordStr) {
         var coords = coordStr.split(',').map(function(coord) {
             return parseFloat(coord.trim());
@@ -201,8 +252,8 @@ $(document).ready(function() {
         el.title = title;
 
         var marker = new mapboxgl.Marker(el)
-            .setLngLat(coords)
-            .addTo(map);
+        .setLngLat(coords)
+        .addTo(map);
 
         currentMarkers.push(marker); // Ajoute le nouveau marqueur à la liste
     }
