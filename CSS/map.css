@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Ubuntu&display=swap');
+
+*{
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka One', cursive;
+    box-sizing: border-box;
+    transition: all.2s linear;
+    text-decoration: none;
+    border: none;
+}
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 7em;
+    scroll-behavior: smooth;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px; /* Hauteur fixe pour le header */
+    z-index: 10; /* Assurez-vous que le header est au-dessus des autres éléments */
+    /* autres styles */
+}
+
+
+#map {
+    margin-top: 70px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
+    /* autres styles */
+}
+
+header .logo {
+    font-size: 27px;
+    font-weight: bold;
+    
+}
+
+header .logo p{
+    color: #174b7f;
+}
+
+header .logo span {
+    color: #000;
+}
+.menu {
+    display: flex;
+}
+.menu li {
+    list-style: none;
+    margin: 0 30px;
+}
+.menu li a {
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/*
+.menu li a:hover {
+    color: green;
+}
+*/
+
+header .login_btn {
+    background-color: #174b7f;
+    cursor: pointer;
+    color: #fff;
+    padding: 5px 25px;
+}

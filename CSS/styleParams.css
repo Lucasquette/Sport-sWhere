@@ -1,0 +1,123 @@
+.menu-params{
+    display: flex;
+    flex-direction: column;
+
+
+    position: absolute;
+    top: 90px; /* Espacement du haut */
+    left: 20px; /* Espacement de la gauche */
+}
+
+.params {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond avec une légère transparence */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée légère */
+    z-index: 1; /* S'assurer qu'elle apparaisse au-dessus de la carte */
+}
+
+.params h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+.params input[type="text"],
+.params .btnTransport,
+.params .btn-go, 
+.params .btn-plusloin{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Assure que le padding ne change pas la largeur */
+    display: block; /* Assure que les éléments sont centrés correctement */
+}
+
+.params .btnTransport {
+    background-color: #dcf1f0;
+    border-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Animation douce pour le changement de couleur */
+}
+
+.params .btnTransport:hover {
+    background-color: #e6e6e6; /* Couleur au survol */
+}
+
+.params .btnTransport.active {
+    background-color: #afd3fa; /* Couleur quand le bouton est actif */
+    color: white;
+}
+
+.params .btnTransport i {
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.params .btn-go {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.params .btn-go:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.params .btn-plusloin{
+    display: none;
+    background-color: #347c56;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.params .btn-plusloin:hover {
+    background-color: #225b3d;
+}
+
+.transport {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transport button {
+    flex-basis: calc(33.333% - 10px);
+}
+
+
+.tmps_parcours {
+    margin-top: 20px;
+    background-color: rgba(16, 14, 14, 0.635); /* Couleur de fond sombre pour le conteneur */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée légère */
+    color: white; /* Texte blanc pour tout le contenu */
+    z-index: 1; /* S'assurer qu'elle apparaisse au-dessus de la carte */
+}
+
+.tmps_parcours h3 {
+    background-color: rgba(16, 14, 14); /* Couleur de fond pour le titre */
+    padding: 10px; /* Padding pour le titre */
+    margin: 0; /* Retirer la marge par défaut des h3 */
+    border-top-left-radius: 8px; /* Arrondir les coins supérieurs */
+    border-top-right-radius: 8px;
+}
+
+.tmps_parcours p {
+    padding: 10px; /* Padding pour le paragraphe */
+    margin: 0; /* Retirer la marge par défaut des p */
+}
+
+.tmps_parcours p span{
+    color: #95bce6;
+    font-weight: 700;
+}
