@@ -10,4 +10,5 @@ Avec une base de données de plus de 300 000 complexes sportifs qui englobe tout
 
 
     Reste à faire:
-- Listbox pour les sports
+    - Listbox pour les sports
+    - Bouton pour ouvrir le menu des paramètres en mode responsive
