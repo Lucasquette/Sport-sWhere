@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     var transportMode = 'driving'; // Mode de transport par défaut
     var currentMarkers = [];
-    var currentIndex = 0; // Index de l'emplacement sportif actuel
+    var currentIndex; // Index de l'emplacement sportif actuel
     var sportLocations = [];
 
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
         var sport = $('#input-sport').val();
         var adresse = $('#input-adresse').val();
         var mapboxAccessToken = 'pk.eyJ1IjoibHVjYXNxdWV0dGVzIiwiYSI6ImNscTd5dDRjNjFjY2cyamt6cTF5OWswc2EifQ.fGb8-XeCWUNgclOcz7HXHQ';
-
+        currentIndex = 0; 
         
         
         
@@ -76,6 +76,7 @@ $(document).ready(function() {
     $('#btn-plusloin').click(function() {
         var mapboxAccessToken = 'pk.eyJ1IjoibHVjYXNxdWV0dGVzIiwiYSI6ImNscTd5dDRjNjFjY2cyamt6cTF5OWswc2EifQ.fGb8-XeCWUNgclOcz7HXHQ';
         currentIndex++;
+        console.log("num" + currentIndex)
     
         var startMarker = currentMarkers.find(marker => marker.getElement().classList.contains('markerDepart'));
         if (!startMarker) {
