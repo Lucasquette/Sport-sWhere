@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           
           <div class="souvenir">
-            <label><input type="checkbox">Se souvenir de moi</label>
+            
             <a href="oublie.html">Mot de passe oublié</a>
           </div>
           

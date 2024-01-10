@@ -80,7 +80,7 @@ header .login_btn {
     position: relative;
     height: 120vh;
     width: 100%;
-    background-image: url(../Images/back.png);
+    background-image: url(../Images/back2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -158,7 +158,7 @@ header .login_btn {
     margin: 4% 0;
     transition: 0.5s;
     background-color: #0b2743;
-    color:#5b5a5a;
+    color:#ffffff;
     padding: 3%;
 }
 

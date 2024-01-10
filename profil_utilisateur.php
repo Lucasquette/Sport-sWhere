@@ -20,21 +20,6 @@ if ($conn->connect_error) {
 }
 
 $nomUtilisateur = $_SESSION['nom_utilisateur'];
-
-$stmt = $conn->prepare("SELECT email, adresse FROM utilisateurs WHERE nom = ?");
-$stmt->bind_param("s", $nomUtilisateur);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-    $email = $user['email'];
-    $adresse = $user['adresse'];
-} else {
-    echo "Utilisateur non trouvé.";
-    exit;
-}
-
 $message_succes = "";
 $message_erreur = "";
 
@@ -63,6 +48,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt->close();
     }
+}
+
+// Recharger les informations après la mise à jour
+$stmt = $conn->prepare("SELECT email, adresse FROM utilisateurs WHERE nom = ?");
+$stmt->bind_param("s", $nomUtilisateur);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    $email = $user['email'];
+    $adresse = $user['adresse'];
+} else {
+    echo "Utilisateur non trouvé.";
+    exit;
 }
 
 $conn->close();

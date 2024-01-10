@@ -10,5 +10,9 @@ Avec une base de données de plus de 300 000 complexes sportifs qui englobe tout
 
 
     Reste à faire:
-    - Listbox pour les sports
-    - Bouton pour ouvrir le menu des paramètres en mode responsive
+    - Localisation actuelle à coté de adresse
+    - Point depart et arrivée avec infos
+    - Bouton voiture, velo, à pied
+    - Avoir un bouton suivant pour nous montrer une autre salle (la deuxieme plus loin, la troisième, ...)
+    - Finaliser site web, mettre tout en un
+    - Adapater le zoom après la recherche pour voir le chemin complet

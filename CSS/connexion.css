@@ -101,7 +101,7 @@ header .login_btn {
     width: 26.25em;
     background: transparent;
     border: 5px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(9px);
+    backdrop-filter: blur(30px);
     color: #fff;
     border-radius: 12px;
     padding: 30px 40px;

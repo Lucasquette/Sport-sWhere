@@ -1,6 +1,20 @@
 <?php
 session_start();
 
+
+$sports = [
+  "foot",
+  "pétanque",
+  "gymnastique",
+  "danse",
+  "rugby",
+  "basket",
+  "padel",
+  "salle de combat"
+];
+
+
+
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
@@ -160,13 +174,22 @@ $conn->close();
 
   <div id="map"></div>
 
+  <button class="btn-ouvrir-params">Ouvrir</button>
+
   <div class='menu-params'>
     <div class="params" id="params">
+          <button class="btn-fermer-params">X</button>
+          <div id="msg-erreur"></div>
           <h4>Adresse</h4>
           <input type="text" id="input-adresse" value="<?php echo htmlspecialchars($adresse); ?>">
 
           <h4 >Sport</h4>
-          <input type="text" id="input-sport">
+          <input type="text" id="input-sport" list="liste-sports">
+          <datalist id="liste-sports">
+            <?php foreach ($sports as $sport): ?>
+                <option value="<?php echo htmlspecialchars($sport); ?>">
+            <?php endforeach; ?>
+          </datalist>
 
           <h4>Transport</h4>
           <div class="transport">
@@ -184,7 +207,21 @@ $conn->close();
   </div>
 
   <script>
+
+    var menu_toggle = document.querySelector('.menu_toggle');
+    var menu = document.querySelector('.menu');
+    var menu_toggle_span = document.querySelector('.menu_toggle span');
+
+    menu_toggle.onclick = function(){
+        menu_toggle.classList.toggle('active');
+        menu_toggle_span.classList.toggle('active');
+        menu.classList.toggle('responsive') ;
+    }
+
+
+
     $(document).ready(function () {
+      $('#car').addClass('active');
       $('.btnTransport').click(function () {
         // Retire la classe 'active' de tous les boutons de transport
         $('.btnTransport').removeClass('active');
@@ -194,6 +231,64 @@ $conn->close();
       });
     });
 
+    function adjustMenuVisibility() {
+        if ($(window).width() > 615) {
+            $('.params').show();
+            $('.btn-ouvrir-params').hide();
+            $('.btn-fermer-params').hide();
+            
+        } else {
+            $('.params').hide();
+            $('.btn-ouvrir-params').show();
+            $('.btn-fermer-params').show();
+        }
+    }
+
+    // Appeler la fonction au chargement de la page et à chaque redimensionnement de la fenêtre
+    adjustMenuVisibility();
+    $(window).resize(adjustMenuVisibility);
+
+    $('.btn-ouvrir-params').click(function() {
+        $('.params').slideToggle('fast', function() {
+            if ($('.params').is(":visible")) {
+                $('.btn-ouvrir-params').hide();
+            } else {
+                adjustMenuVisibility(); // ajuste la visibilité en fonction de la largeur de la fenêtre
+            }
+        });
+    });
+
+    $('.btn-fermer-params').click(function() {
+        $('.params').slideToggle('fast', function() {
+            adjustMenuVisibility(); // ajuste la visibilité en fonction de la largeur de la fenêtre
+        });
+    });
+
+
+/*
+    $(document).ready(function () {
+        $('#btn-go').click(function (e) {
+            e.preventDefault();
+
+            var adresse = $('#input-adresse').val().trim();
+            var sport = $('#input-sport').val().trim();
+            var sportsAutorises = <?php echo json_encode($sports); ?>;
+
+            var messageErreur = '';
+            if (!adresse) {
+                messageErreur += 'Veuillez entrer une adresse. ';
+            }
+            if (!sport) {
+                messageErreur += 'Veuillez choisir un sport. ';
+            } else if (!sportsAutorises.includes(sport)) {
+                messageErreur += 'Veuillez choisir un sport valide de la liste. ';
+            }
+
+            if(messageErreur) {
+              $("#msg-erreur").html(`<p>${messageErreur}</p>`);
+            }
+          });
+      }); */
   </script>
   <script src="JS/initMap.js"></script>
   <script src="JS/getParams.js"></script>

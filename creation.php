@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
+    
     $email = $conn->real_escape_string($_POST['email']);
     $nomUtilisateur = $conn->real_escape_string($_POST['nom_utilisateur']);
     $motDePasse = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);

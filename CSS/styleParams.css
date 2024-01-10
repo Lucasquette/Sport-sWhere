@@ -90,6 +90,15 @@
     justify-content: space-between;
 }
 
+
+#msg-erreur{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(150, 77, 77);
+    font-size: 20px;
+}
+
 .transport button {
     flex-basis: calc(33.333% - 10px);
 }
@@ -120,4 +129,70 @@
 .tmps_parcours p span{
     color: #95bce6;
     font-weight: 700;
+}
+
+.btn-ouvrir-params:hover {
+    background-color:#174b7f ;
+    color:white;
+    border: 3px solid rgb(10, 10, 10);
+}
+
+
+
+@media (max-width: 615px) {
+    /* Cache params et affiche le bouton d'ouverture */
+
+    .tmps_parcours {
+    position: fixed;
+      top: 160px;
+    }
+
+    .params {
+        display: none;
+        position: fixed;
+        top: 125px; /* ajustez en fonction de la hauteur de votre header */
+        left: 25;
+        width: 45%;
+        background-color: white;
+        box-shadow: -1px 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 16;
+    }
+
+    
+
+    .btn-ouvrir-params {
+        display: block;
+        position: fixed;
+        top: 125px; /* ajustez en fonction de la hauteur de votre header */
+        left: 25px;
+        z-index: 15;
+
+        width: 70px;
+        height: 45px;
+        text-align: center;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        font-size: 14px;
+        color: #174b7f;
+        font-weight: 600;
+    }
+    
+
+    .btn-fermer-params {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
+
+@media (min-width: 616px) {
+    /* Cache le bouton d'ouverture et affiche params */
+    .btn-ouvrir-params {
+        display: none;
+    }
 }

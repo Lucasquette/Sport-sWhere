@@ -112,6 +112,7 @@ if (isset($_GET['logout'])) {
                 info.style.transform='translateY(-60px)';
                 elementA.style.transition = 'transform 0.3s ease';
                 elementA.style.backgroundColor = 'rgba(253, 252, 252, 0.76)';
+                info.style.color = 'white';
                 inputsTexte.forEach(function(input) {
                     input.style.background = 'white';
                 });

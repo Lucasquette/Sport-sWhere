@@ -5,7 +5,9 @@
     outline: none;
     margin: 0;
     padding: 0;
+    font-family: 'Fredoka One', cursive;
     box-sizing: border-box;
+    transition: all.2s linear;
     text-decoration: none;
     border: none;
 }
@@ -17,20 +19,21 @@ html {
 
 
 header {
-    font-family: 'Fredoka One', cursive;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 70px; /* Hauteur fixe pour le header */
-    z-index: 10; /* Assurez-vous que le header est au-dessus des autres éléments */
-    /* autres styles */
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8%;
+    height: 11%;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 }
 
-
-#map {
-    margin-top: 70px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
-    /* autres styles */
+header {
+    z-index: 4;
 }
 
 header .logo {
@@ -72,3 +75,108 @@ header .login_btn {
     color: #fff;
     padding: 5px 25px;
 }
+
+.home {
+    position: relative;
+    height: 120vh;
+    width: 100%;
+    background-image: url(../Images/back2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    /*margin-top: 5%;*/
+}
+
+
+@keyframes slide-in {
+    to{
+        filter: blur(0);
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+/* CSS pour le menu responsive */
+
+@media (max-width:682px) {
+    header {
+        padding: 0 10px;
+    }
+    header .menu {
+        display: none;
+    }
+    #home {
+        padding:  0 10px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header .menu.responsive {
+        margin-top: 3%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: 2;
+        background-color: #ffffff;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu_toggle {
+        height: 50px;
+        width: 50px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .menu_toggle span {
+       width: 35px;
+       background-color: #174b7f;
+       height: 5px;
+       border-radius: 6px;
+       transition: 0.5s;
+    }
+    .menu_toggle span.active {
+        width: 0px;
+    }
+    .menu_toggle::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 5px;
+        background-color: #174b7f;
+        transform:translateY(10px);
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .menu_toggle.active::before {
+        width: 28px;
+        transform: rotate(45deg);
+    }
+    .menu_toggle::after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 5px;
+        background-color: #174b7f;
+        transform:translateY(-10px);
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .menu_toggle.active::after {
+        width: 28px;
+        transform: rotate(-45deg);
+    }
+
+}
+

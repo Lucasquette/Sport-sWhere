@@ -29,6 +29,27 @@ $(document).ready(function() {
     });
 
     $('#btn-go').click(function() {
+/*
+        e.preventDefault();
+
+        var adresse = $('#input-adresse').val().trim();
+        var sport = $('#input-sport').val().trim();
+        var messageErreur = '';
+
+        if (!adresse) {
+            messageErreur = 'Veuillez entrer une adresse.';
+        } else if (!sport) {
+            messageErreur = 'Veuillez choisir un sport.';
+        } else if (!sportsAutorises.includes(sport)) {
+            messageErreur = 'Le sport sélectionné n\'est pas dans la liste des sports autorisés.';
+        }
+
+        if (messageErreur) {
+            $('#message-erreur').text(messageErreur); // Assurez-vous que cet ID existe dans votre HTML
+            return; // Sortie précoce de la fonction
+        } */
+
+
         removeCurrentMarkers();
 
         var sport = $('#input-sport').val();
