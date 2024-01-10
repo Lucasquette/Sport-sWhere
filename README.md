@@ -9,10 +9,3 @@ Notre site web permet aux utilisateurs d'obtenir en entrant une adresse et un sp
 Avec une base de données de plus de 300 000 complexes sportifs qui englobe toute la France SportWhere sera vous guider.
 
 
-    Reste à faire:
-    - Localisation actuelle à coté de adresse
-    - Point depart et arrivée avec infos
-    - Bouton voiture, velo, à pied
-    - Avoir un bouton suivant pour nous montrer une autre salle (la deuxieme plus loin, la troisième, ...)
-    - Finaliser site web, mettre tout en un
-    - Adapater le zoom après la recherche pour voir le chemin complet
