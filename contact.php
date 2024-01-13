@@ -1,5 +1,5 @@
 <?php
-session_start(); // Assurez-vous que la session est démarrée sur toutes les pages où vous utilisez les sessions
+session_start(); 
 
 // Script de déconnexion
 if (isset($_GET['logout'])) {
