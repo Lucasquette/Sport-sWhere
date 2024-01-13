@@ -71,13 +71,13 @@ $(document).ready(function() {
                     var startLocation = geocodingData.features[0].center; // [longitude, latitude]
                     
                     $('#btn-plusloin').show();
-                    // Centrer la carte sur le point de départ et ajuster le zoom
+                    
                     map.flyTo({
                         center: startLocation,
                         zoom: 14
                     });
 
-                    // Ajouter un marqueur pour le point de départ
+                 
                     addMarkerDepart(startLocation, '#13B2E2', 'Départ');
                     
                     findClosestSportLocation(startLocation, sport, mapboxAccessToken);
