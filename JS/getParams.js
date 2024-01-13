@@ -129,7 +129,7 @@ $(document).ready(function() {
             data: { sport: sport },
             dataType: 'json',
             success: function(data) {
-                sportLocations = data; // Stockez les données pour une utilisation ultérieure
+                sportLocations = data; 
                 var closestLocation = getClosestLocation(adresseCoords, sportLocations);
                 if (closestLocation) {
                     console.log('Le lieu de sport le plus proche est:', closestLocation);
@@ -156,17 +156,15 @@ $(document).ready(function() {
         fetch(directionsUrl)
             .then(response => response.json())
             .then(data => {
-                // Afficher l'itinéraire sur la carte
+   
                 var route = data.routes[0].geometry;
 
-                // Vérifier si une source d'itinéraire existe déjà
                 if (map.getSource('route')) {
                     
                     map.removeLayer('route');
                     map.removeSource('route');
                 }
 
-                // Ajouter la source d'itinéraire
                 map.addSource('route', {
                     'type': 'geojson',
                     'data': {
@@ -176,7 +174,6 @@ $(document).ready(function() {
                     }
                 });
 
-                // Ajouter la couche d'itinéraire
                 map.addLayer({
                     'id': 'route',
                     'type': 'line',
@@ -235,7 +232,7 @@ $(document).ready(function() {
     }
 
     function getNthClosestLocation(adresseCoords, locations, n) {
-        // Vérifier si n est valide
+
         if (n <= 0 || n > locations.length) {
             console.error("Valeur de 'n' invalide ou hors de portée.");
             return null;
@@ -247,12 +244,11 @@ $(document).ready(function() {
             return { location: location, distance: distance };
         });
     
-        // Trier les emplacements par distance croissante
+
         locationsWithDistance.sort(function(a, b) {
             return a.distance - b.distance;
         });
-    
-        // Retourner le n-ième emplacement le plus proche
+
         return locationsWithDistance[n - 1].location;
     }
     
@@ -261,7 +257,7 @@ $(document).ready(function() {
         var coords = coordStr.split(',').map(function(coord) {
             return parseFloat(coord.trim());
         });
-        return [coords[1], coords[0]]; // Assurez-vous que l'ordre est [longitude, latitude]
+        return [coords[1], coords[0]]; 
     }
 
     function addMarkerDepart(coords, color, title) {
@@ -277,7 +273,7 @@ $(document).ready(function() {
         .setLngLat(coords)
         .addTo(map);
 
-        currentMarkers.push(marker); // Ajoute le nouveau marqueur à la liste
+        currentMarkers.push(marker); 
     }
 
     function addMarkerArriver(coords, nomInfrastructure, ville){
