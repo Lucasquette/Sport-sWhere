@@ -4,6 +4,5 @@ _Une carte interactive avec géolocalisation par NURMINEN Lucas (203), Rakotoari
 ### Compte rendu du projet
 
 
+[Compte Rendu _ Lucas_Madavan_Teddy.pdf](https://github.com/Lucasquette/SportsWhere/files/13933067/Compte.Rendu._.Lucas_Madavan_Teddy.pdf)
 
-
-[Uploading Compte Rendu _ Lucas_Madavan_Teddy.pdf…]()
